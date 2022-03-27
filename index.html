@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="SAMURAI ENGINEER">
+    <title>SAMURAI XD_HTML教材</title>
+    <!-- ************************************************ bootstrap.min.cssの読み込み -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- ************************************************ bootstrap.bundle.min.jsの読み込み -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"
+        defer>
+    </script>
+
+    <!-- ************************************************ Google Font読み込み -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+    <!-- ************************************************ Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- アニメーションをfont Awesome につけるために -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css"
+        type="text/css" media="all" />
+
+    <!-- ************************************************今回作成する styles.cssの読み込み -->
+    <link href="style.css" rel="stylesheet">
+    <!-- ************************************************JSの読み込み  -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
+    <!-- <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <main>
+        <!-- ************************************************ ナビゲーションバー開始 -->
+        <!-- navbarでナビゲーションバー作成。navbar-expand-lgで画面幅が広いときハンバーガーボタンを非表示。 -->
+        <nav class="navbar navbar-expand-lg head">
+
+            <!-- navbarのコンテナ -->
+            <div class="container">
+
+                <!-- navbar-brandはロゴ部分。独自クラスのmy_navbar_brandで細かな調整。 -->
+                <a class="navbar-brand my_navbar_brand">
+
+                    <!-- ロゴのアイコンを配置。navbar_brand_logoは独自クラス。 -->
+                    <img class="img-fluid navbar_brand_logo" src="img/site_logo.png"
+                        alt="サンプル画像"><span>XX高原に位置するSK山</span>
+                </a>
+
+                <!-- navbar-togglerはハンバーガーボタンを表示・非表示にするクラス。 -->
+                <div class="navbar-toggler hamburger_menu" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <input type="checkbox" id="hamburger_btn_check">
+                    <label for="hamburger_btn_check" class="hamburger_btn">
+                        <img class="btn_open" src="img/button_open.png" alt="ナビゲーションバーのボタン">
+                        <img class="btn_close" src="img/button_close.png" alt="ナビゲーションバーのボタン">
+                    </label>
+                </div>
+
+                <!-- これ以降がナビゲーションメニュー部分。説明は後述。 -->
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+
+                        <!-- これ以後のコードは編集しないため省略しています -->
+
+                        <li class="nav-item px-2">
+                            <a class="nav-link my_nav_link my-2" aria-current="page" href="#">ホーム</a>
+                        </li>
+
+                        <li class="nav-item px-2">
+                            <a class="nav-link my_nav_link my-2" href="#about">SK山について</a>
+                        </li>
+
+                        <li class="nav-item px-2">
+                            <a class="nav-link my_nav_link my-2" href="#gallery">ギャラリー</a>
+                        </li>
+
+                        <li class="nav-item px-2">
+                            <a class="nav-link my_nav_link my-2" href="#menu">名物、伝統工芸</a>
+                        </li>
+
+                        <li class="nav-item px-2">
+                            <a class="nav-link my_nav_link my-2" href="#review">観光客の声</a>
+                        </li>
+
+                        <li class="nav-item px-2">
+                            <a class="nav-link my_nav_link my-2" href="#access">アクセス</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ************************************************ ナビゲーションバー終了 -->
+
+        <!-- ************************************************ カルーセル開始 -->
+        <!-- カルーセル部分 -->
+        <!-- idのmyCarouselはインジケーター部分のdata-bs-targetと紐付く必要がある。mb-5で下方向に余白追加。 -->
+        <div id="myCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+
+            <!-- インジケーター部分 -->
+            <ol class="carousel-indicators">
+                <!-- この箇所と前述のidは紐付いている。data-bs-slide-toの番号がカルーセルの順番。 -->
+                <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="3"></li>
+            </ol>
+
+            <!-- carousel-inner：カルーセルのキャプションと背景画像の部分。現在は1枚目だけ表示。 -->
+            <div class="carousel-inner shasin">
+                <!-- カルーセル1枚目 -->
+                <div class="carousel-item active">
+                    <img src="img/tree-276014_1920.jpg" alt="SAMURAI KITCHEN-1">
+
+                    <!-- 親要素 -->
+                    <div class="carousel-caption">
+
+                        <!-- h1タグは carousel-caption クラスの子要素 中に入っているので -->
+                        <!-- 独自クラスで位置とフォントを変更 -->
+                        <h1 class="my_carousel_caption">
+                            SK山の四季<br>
+                            Summer
+                        </h1>
+
+                        <!-- 親要素の閉じタグ h1タグは親要素の中にはいっています -->
+                    </div>
+                </div>
+
+                <!-- カルーセル2枚目 -->
+                <div class="carousel-item">
+                    <img src="img/road-1072821_1920.jpg" alt="サンプル画像">
+                    <div class="carousel-caption">
+                        <h1 class="my_carousel_caption">SK山の四季<br>Autumn
+
+                        </h1>
+                    </div>
+                </div>
+
+                <!-- カルーセル3枚目 -->
+                <div class="carousel-item">
+                    <img src="img/trees-4830285_1920.jpg" alt="サンプル画像">
+                    <div class="carousel-caption">
+                        <h1 class="my_carousel_caption">SK山の四季<br>Winter
+
+                        </h1>
+                    </div>
+                </div>
+
+                <!-- カルーセル4枚目 -->
+                <div class="carousel-item">
+                    <img src="img/tulips-1197602_1920.jpg" alt="サンプル画像">
+                    <div class="carousel-caption">
+                        <h1 class="my_carousel_caption">
+                            SK山の四季<br> Spring
+                        </h1>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+
+            <!-- コントロールボタン 左側 -->
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+
+            <!-- コントロールボタン 右側 -->
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
+        </div>
+        <!-- ************************************************ カルーセル終了 -->
+
+        <!-- ************************************************ アバウトセクション開始 -->
+        <section class="about_us_bg" id="about">
+            <div class="abou">
+                <!--コンテンツの中央揃え。上下方向にパディング（サイズ5）。下方向にマージン（サイズ5）。 -->
+                <div class="container py-5 mb-5">
+
+                    <!-- rowクラス（行） -->
+                    <div class="row">
+
+                        <!-- 左側カラム（6/12分割） -->
+                        <div class="col-lg-6 text-left">
+
+                            <!-- 上下方向にパディング（サイズ5） -->
+                            <div class="py-5">
+
+                                <!-- 下方向にマージン（サイズ5） -->
+                                <h2 class="mb-5 section_title about ">
+                                    XX高原に位置するSK山
+                                </h2>
+                                <!-- 下方向にマージン（サイズ2） -->
+                                <p class="mb-2">
+                                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+                                    <!-- テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br> -->
+                                    <!-- テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br> -->
+                                </p>
+
+                                <!-- 下方向にマージン（サイズ2） -->
+                                <p class="mb-2">
+                                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+                                </p>
+
+                                <!-- 下方向にマージン（サイズ2） -->
+                                <p class="mb-2">
+                                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+                                    <!-- テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト。<br> -->
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 右側カラム（6/12分割） -->
+                        <div class="col-lg-6">
+
+                            <!-- 画像を配置 -->
+                            <div class="yama">
+                                <img src="img/mountain-6827881_1920.jpg" alt="pizza">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ************************************************ アバウトセクション終了 -->
+
+        <!-- ************************************************ ギャラリーセクション開始 -->
+        <section id="gallery">
+
+            <div class="container mb-5">
+                <h2 class=" section_title gallery text-center">ギャラリー </h2>
+                <a href="test.html" style="display: block;" class="text-center"><button type="button"
+                        class="btn btn-success shadow mb-3">もっとご覧になりたい方はこちら</button></a>
+                <p class="text-center mb-5">
+                    ここXX高原のSK山の写真
+                </p>
+
+                <div class="row">
+                    <div class="col-6 col-lg-3 mb-4 d-flex justify-content-center">
+                        <img class="img-fluid" src="img/fantasy-2049567_1920.jpg" alt="サンプル画像">
+                    </div>
+
+                    <div class="col-6 col-lg-3 mb-4 d-flex justify-content-center">
+                        <img class="img-fluid" src="img/trees-3822149_1920.jpg" alt="サンプル画像">
+                    </div>
+
+                    <div class="col-6 col-lg-3 mb-4 d-flex justify-content-center">
+                        <img class="img-fluid" src="img/oilseed-rape-2135026_1920.jpg" alt="サンプル画像">
+                    </div>
+
+                    <div class="col-6 col-lg-3 mb-4 d-flex justify-content-center">
+                        <img class="img-fluid" src="img/church-1993645_1920.jpg" alt="サンプル画像">
+                    </div>
+
+                    <div class="col-6 col-lg-3 mb-4 d-flex justify-content-center">
+                        <img class="img-fluid taki" src="img/waterfall-5229807_1920.jpg" alt="サンプル画像">
+                    </div>
+
+
+
+                    <div class="col-6 col-lg-3 mb-4 d-flex justify-content-center">
+                        <img class="img-fluid" src="img/butterflies-1127666_1920.jpg" alt="サンプル画像">
+                    </div>
+
+                    <div class="col-6 col-lg-3 mb-4 d-flex justify-content-center">
+                        <img class="img-fluid taki" src="img/forest-56930_1280.jpg" alt="サンプル画像">
+                    </div>
+
+                    <div class="col-6 col-lg-3 mb-4 d-flex justify-content-center">
+                        <img class="img-fluid" src="img/blue-flower-2197679_1920.jpg" alt="サンプル画像">
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+        <!-- ************************************************ ギャラリーセクション終了 -->
+
+        <!-- ************************************************ メニューセクション -->
+        <section id="menu">
+
+            <!-- タイトル文字部分のコンテナ -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <!-- タイトル文字 -->
+                        <!-- タイトル中央揃え、マージンを下方向へ5　-->
+                        <h2 class="section_title menu text-center ">名物、伝統工芸</h2>
+                        <a href="test.html" class="text-center mb-5" style="display: block;"><button type="button"
+                                class="btn btn-success shadow">もっとご覧になりたい方はこちら</button></a>
+                    </div>
+
+
+                </div>
+            </div>
+            </div>
+
+            <!-- メニュー部分のコンテナ -->
+            <!-- 下方向にマージン5 -->
+            <div class="container mb-5">
+                <div class="row">
+
+                    <!-- 左側メニュー -->
+                    <div class="col-lg-6 col-12">
+
+                        <!-- さらに子要素を5:7で分割 -->
+                        <!-- カラム間のパディングをなくす。下方向にマージン4 -->
+                        <div class="row g-0 mb-4">
+                            <!-- 画像中央揃え -->
+                            <div class="col-lg-5 col-12 text-center">
+
+                                <!-- 左側メニュー画像部分 -->
+                                <!-- 画像がカラムをはみ出ないようにする -->
+                                <img src="img/tofu-5966853_1920.jpg" class="img-fluid" alt="名物の豆腐">
+                            </div>
+
+                            <!-- 右側テキスト部分 -->
+                            <!-- 全体的にパディング4 -->
+                            <div class="col-lg-7 col-12 p-4">
+                                <!-- 下方向のマージン0 文字を小さくするmenu_title独自クラスを追加 -->
+                                <h4 class="mb-0 menu_title">名物の豆腐</h4>
+                                <!-- 縦方向の中央揃え -->
+                                <p class="my-auto">
+                                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                                <!-- フォントを変更する独自クラスを追加 -->
+                                <p class="menu_price"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 右側部分メニュー。上記と同じ内容なのでコメント省略 -->
+                    <div class="col-lg-6 col-12">
+                        <div class="row g-0 mb-4">
+                            <div class="col-lg-5 col-12 text-center">
+                                <img src="img/udon-4065311_1920.jpg" class="img-fluid" alt="名物のうどん">
+                            </div>
+                            <div class="col-lg-7 col-12 p-4">
+                                <h4 class="mb-0 menu_title">名物のうどん</h4>
+                                <p class="my-auto">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                                </p>
+                                <p class="menu_price"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 以降、メニューの数だけ同じコード繰り返し記載 -->
+
+
+
+
+
+
+                    <!-- 左側メニュー -->
+                    <div class="col-lg-6 col-12">
+
+                        <!-- さらに子要素を5:7で分割 -->
+                        <div class="row g-0 mb-4">
+                            <div class="col-lg-5 col-12 text-center">
+
+                                <!-- 左側メニュー画像部分 -->
+                                <img src="img/kokeshi-doll-338960_1920.jpg" class="img-fluid" alt="伝統工芸品のこけし">
+                            </div>
+
+                            <!-- 右側テキスト部分 -->
+                            <div class="col-lg-7 col-12 p-4">
+                                <h4 class="mb-0 menu_title">伝統工芸品のこけし</h4>
+                                <p class="my-auto">
+                                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                                <p class="menu_price"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 右側部分メニュー。上記と同じ内容なのでコメント省略 -->
+                    <div class="col-lg-6 col-12">
+                        <div class="row g-0 mb-4">
+                            <div class="col-lg-5 col-12 text-center">
+                                <img src="img/basket-440398_1920.jpg" class="img-fluid" alt="伝統工芸の枝編み細工">
+                            </div>
+                            <div class="col-lg-7 col-12 p-4">
+                                <h4 class="mb-0 menu_title">伝統工芸の枝あっみ細工</h4>
+                                <p class="my-auto">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                                <p class="menu_price"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 以下の閉じタグ3つは必要 -->
+
+                    <!-- <div class="row"> -->
+
+                    <!-- 左側メニュー -->
+                    <div class="col-lg-6 col-12 no">
+
+                        <!-- さらに子要素を5:7で分割 -->
+                        <div class="row g-0 mb-4">
+                            <div class="col-lg-5 col-12 text-center">
+
+                                <!-- 左側メニュー画像部分 -->
+                                <img src="img/amatriciana.png" class="img-fluid" alt="アマトリチャーナ">
+                            </div>
+
+                            <!-- 右側テキスト部分 -->
+                            <div class="col-lg-7 col-12 p-4">
+                                <h4 class="mb-0 menu_title">アマトリチャーナ</h4>
+                                <p class="my-auto">豚肉の塩漬けのパンチェッタと、玉ねぎとトマトを使用したパスタ料理。パンチェッタの塩味とトマトの酸味のバランスが絶妙なひと皿。</p>
+                                <p class="menu_price">￥1,400</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 右側部分メニュー。上記と同じ内容なのでコメント省略 -->
+                    <div class="col-lg-6 col-12 no">
+                        <div class="row g-0 mb-4">
+                            <div class="col-lg-5 col-12 text-center">
+                                <img src="img/acqua-pazza.png" class="img-fluid" alt="アクアパッツァ">
+                            </div>
+                            <div class="col-lg-7 col-12 p-4">
+                                <h4 class="mb-0 menu_title">アクアパッツァ</h4>
+                                <p class="my-auto">
+                                    タイやアサリなどの魚介類に、トマトやオリーブオイル、にんにくなどを煮込んだパスタ料理。白ワインのソースに溶け込んだ魚介類の旨みがいっぱいのひと皿。</p>
+                                <p class="menu_price">￥2,000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 以降、メニューの数だけ同じコード繰り返し記載 -->
+
+
+
+                    <!-- メニュー部分のコンテナ -->
+
+                    <!-- 左側メニュー -->
+                    <div class="col-lg-6 col-12 no">
+
+                        <!-- さらに子要素を5:7で分割 -->
+                        <div class="row g-0 mb-4">
+                            <div class="col-lg-5 col-12 text-center">
+
+                                <!-- 左側メニュー画像部分 -->
+                                <img src="img/bagna-cauda.png" class="img-fluid" alt="バーニャカウダ">
+                            </div>
+
+                            <!-- 右側テキスト部分 -->
+                            <div class="col-lg-7 col-12 p-4">
+                                <h4 class="mb-0 menu_title">バーニャカウダ</h4>
+                                <p class="my-auto">旬の野菜が満載の野菜料理。チーズ、オリーブオイル、バルサミコ酢をベースにした3種の自家製ソースでお好みに合わせて召し上がれるひと皿。
+                                </p>
+                                <p class="menu_price">￥1,000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 右側部分メニュー。上記と同じ内容なのでコメント省略 -->
+                    <div class="col-lg-6 col-12 no">
+                        <div class="row g-0 mb-4">
+                            <div class="col-lg-5 col-12 text-center">
+                                <img src="img/gelato.png" class="img-fluid" alt="ジェラート">
+                            </div>
+                            <div class="col-lg-7 col-12 p-4">
+                                <h4 class="mb-0 menu_title">ジェラート</h4>
+                                <p class="my-auto">濃厚な牛乳をベースにしたものから、果肉と果汁が満載のフルーツをベースにしたものまで取り揃えたイタリアのアイス。冷たくて甘いひと皿。</p>
+                                <p class="menu_price">￥800</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </section>
+        <!-- ************************************************ メニューセクション終了 -->
+
+        <!-- ************************************************ レビューセクション開始 -->
+        <section id="review">
+
+            <!-- review_wrapper で背景画像を設定します -->
+            <div class="review_wrapper">
+
+                <!-- container部分 -->
+                <div class="container py-5 mb-5">
+
+                    <!-- 中央揃えでタイトルを表示 -->
+                    <div class="text-center mb-5">
+                        <h2 class="section_title review text-center text-white">観光客の声</h2>
+                        <a href="test.html"><button type="button"
+                                class="btn btn-success shadow">もっとご覧になりたい方はこちら</button></a>
+                    </div>
+
+                    <!-- row部分：左右のカラムを中央揃え -->
+                    <div class="row pb-5 justify-content-center">
+
+                        <!-- 左側カラム -->
+                        <div class="col-12 col-lg-5 mt-3">
+
+                            <!-- 背景を白色に設定 -->
+                            <!-- h_420 クラスで白枠の高さを修正します -->
+                            <div class="bg-white h_420">
+
+                                <!-- 内側にパディング4 -->
+                                <div class="p-4">
+
+                                    <!-- 顔写真と年齢などのテキストはd-flexで横並びにする　中央揃え -->
+                                    <div class="d-flex align-items-center">
+                                        <!-- お客様の画像を配置 -->
+                                        <!-- reviewer_img クラスで画像サイズを変更します -->
+                                        <img src="img/customer-woman.png" class="reviewer_img" alt="サンプル画像">
+                                        <div>
+                                            <!-- お客様情報のテキスト -->
+                                            <p class="my-0">40代/女性</p>
+                                            <p class="my-0">2021年11月頃</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="my-3">
+                                        <!-- 星の画像を表示 -->
+                                        <img src="img/star-point.png" class="star_img" alt="star">
+                                        <img src="img/star-point.png" class="star_img" alt="star">
+                                        <img src="img/star-point.png" class="star_img" alt="star">
+                                        <img src="img/star-point.png" class="star_img" alt="star">
+                                        <img src="img/star-point.png" class="star_img" alt="star">
+                                    </div>
+
+                                    <!-- レビュータイトル -->
+                                    <h5>自然がテキストテキストテキストテキスト</h5>
+                                    <!-- レビュー内容 -->
+                                    <p>
+                                        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                                    </p>
+
+                                    <!-- 黄色のボタンを配置 -->
+                                    <!-- <button type="button" class="btn btn-success shadow fix_tottom">詳細</button> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 右側カラム：左側カラムと内容が同じなので説明は省略 -->
+                        <div class="col-12 col-lg-5 mt-3">
+                            <div class="bg-white h_420">
+                                <div class="p-4">
+                                    <div class="d-flex align-items-center">
+                                        <img src="img/customer-man.png" class="reviewer_img" alt="サンプル画像">
+                                        <div>
+                                            <p class="my-0">30代/男性</p>
+                                            <p class="my-0">2021年8月頃</p>
+                                        </div>
+                                    </div>
+                                    <div class="my-3">
+                                        <img src="img/star-point.png" class="star_img" alt="star">
+                                        <img src="img/star-point.png" class="star_img" alt="star">
+                                        <img src="img/star-point.png" class="star_img" alt="star">
+                                        <img src="img/star-point.png" class="star_img" alt="star">
+                                        <img src="img/star-no-point.png" class="star_img" alt="no-star">
+                                    </div>
+                                    <h5>景色がテキストテキステキストテキス</h5>
+                                    <p>
+                                        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                                    </p>
+                                    <!-- <button type="button" class="btn btn-success shadow fix_tottom">詳細</button> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- ************************************************ レビューセクション終了 -->
+
+        <!-- ************************************************ アクセスセクション開始 -->
+        <section id="access">
+
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12 text-center ">
+                        <h2 class="section_title text-center access">アクセス</h2>
+                        <a href="test.html"> <button type="button"
+                                class="btn btn-success mb-3">詳しいアクセス方法はこちら</button></a>
+                        <p>SK山のZ登山口への経路はJRX線　XX駅よりYYYYのバスでYYYY駅で降り、ZZZZZZZZZZです。<br>
+                            SK山、観光協会の観光案内所から徒歩X分です。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+
+                <div class="row justify-content-center">
+
+                    <div class="col-lg-6 mt-3">
+
+                        <div class="container mb-5 px-2">
+                            <!-- この部分にマップを配置 -->
+                            <!-- 横幅100% 高さ50vh -->
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.773586198959!2d139.6940468151642!3d35.65794958019969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b602972bb83%3A0xa6b553df33a5bd04!2z5L6N44Ko44Oz44K444OL44Ki!5e0!3m2!1sja!2sjp!4v1647751486994!5m2!1sja!2sjp"
+                                class="w-100" style="height: 50vh;" loading="lazy"></iframe>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6 mt-3">
+                        <!-- 営業時間などのテキストを追加 -->
+                        SK山、観光協会、観光案内所について
+                        <div class="restaurant_info py-3">
+                            <div class="d-flex mb-3">
+                                <img src="img/icon-Marker.png" alt="marker">
+                                <p class="p-0 m-0">〷県YYY市XXXXXX</p>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <img src="img/icon-Clock.png" alt="clock">
+                                <p class="p-0 m-0">9:00-17:00&nbsp;&nbsp;(定休日：火曜日、水曜日)</p>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <img src="img/icon-Phone.png" alt="phone">
+                                <p class="p-0 m-0">XX-XXXX-XXXX</p>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <img src="img/icon-Mail.png" alt="mail">
+                                <p class="p-0 m-0">test@example.com</p>
+                            </div>
+
+                            <button type="button" class="btn btn-success message">お問い合わせ</button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+        </section>
+        <!-- ************************************************ アクセスセクション終了 -->
+
+
+        <!-- ************************************************ フッター開始 -->
+        <!-- <footer id="footer"> -->
+
+        <!-- <div class="container"> -->
+        <!-- <div class="row"> -->
+
+        <!-- 2カラムに分けたレイアウトの左側カラム -->
+        <!-- 親要素にposition-relativeを設定 -->
+        <!-- <div class="col-12 col-lg-6 position-relative"> -->
+
+        <!-- 左側カラムのレイアウトをさらに分けるためにrowを使用 -->
+        <!-- <div class="row pt-5"> -->
+
+        <!-- 画面をさらに2:10に分割 -->
+        <!-- ここは2:10の2の部分 -->
+        <!-- <div class="col-lg-2 text-center my-3"> -->
+
+        <!-- サイトロゴ -->
+        <!-- <img class="img-fluid" src="img/site_logo.png" alt="サンプル画像"> -->
+        <!-- </div> -->
+
+        <!-- ここは2:10の10の部分 -->
+        <!-- <div class="col-lg-10 align-self-center my-3"> -->
+        <!-- タイトル文字 -->
+        <!-- <h2 class="m-0">SAMURAI RESTAURANT</h2> -->
+        <!-- </div> -->
+        <!-- </div> -->
+
+        <!-- 営業時間などのテキストを追加 -->
+        <!-- 独自クラスrestaurant_infoを追加 -->
+        <!-- <div class="restaurant_info py-3"> -->
+        <!-- <div class="d-flex mb-3"> -->
+        <!-- <img src="img/icon-Marker.png" alt="marker"> -->
+        <!-- <p class="p-0 m-0">東京都渋谷区道玄坂2丁目11-1Gスクエア渋谷道玄坂4F</p> -->
+        <!-- </div> -->
+        <!-- <div class="d-flex mb-3"> -->
+        <!-- <img src="img/icon-Clock.png" alt="clock"> -->
+        <!-- <p class="p-0 m-0">12:00-22:00&nbsp;&nbsp;(定休日：火曜日、水曜日)</p> -->
+        <!-- </div> -->
+        <!-- <div class="d-flex mb-3"> -->
+        <!-- <img src="img/icon-Phone.png" alt="phone"> -->
+        <!-- <p class="p-0 m-0">03-1234-5678</p> -->
+        <!-- </div> -->
+        <!-- <div class="d-flex mb-3"> -->
+        <!-- <img src="img/icon-Mail.png" alt="mail"> -->
+        <!-- <p class="p-0 m-0">test@example.com</p> -->
+        <!-- </div> -->
+
+        <!-- コピーライトを追加 -->
+        <!-- copy_rightクラスでabsoluteを設定。align-items-centerで上下中央揃え。 -->
+
+        <div class="copy_right align-items-center">
+            <p>
+                SK山、観光協会
+            </p>
+
+            <!-- SNSアイコンを表示 -->
+            <!-- SNSアイコンに独自クラスsns_imgを追加 -->
+            <!-- <i class="fas fa-facebook faa-shake animated"></i> -->
+            <a href="test.html"> <i class="fa fa-facebook-f hon fa-2x"></i></a>
+            <!-- <i class="fa fa-facebook faa-shake animated fa-2x hoy" aria-hidden="true"></i> -->
+            <!-- <i class="fas fa-facebook-square"></i> -->
+            <!-- <span class="fa fa-facebook faa-shake animated fa-2x"></span> -->
+            <a href="test.html"><i class="fab fa-twitter hon fa-2x"></i></a>
+            <!-- <i class="fab fa-twitter faa-wrench animated hoyt fa-2x"></i> -->
+            <!-- <img src="img/icon-facebook.png" class="sns_img" alt="facebook"> -->
+            <!-- <img src="img/icon-twitter.png" class="sns_img" alt="twitter"> -->
+        </div>
+        <!-- </div> -->
+        <!-- </div> -->
+
+        <!-- 2カラムに分けたレイアウトの右側カラム -->
+        <!-- <div class="col-lg-6 d-none d-lg-block"> -->
+        <!-- 背景画像を表示 -->
+
+        <!-- <img src="img/background-footer.jpg" alt="背景画像"> -->
+        <!-- </div> -->
+        <!-- </div> -->
+        <!-- </div> -->
+
+        <!-- </footer> -->
+        <!-- ************************************************ フッター終了 -->
+    </main>
+
+    <script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>
