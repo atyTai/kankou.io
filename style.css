@@ -250,7 +250,7 @@ p {
 
 /* 背景画像を設定 */
 .review_wrapper {
-    background-image: url(../img/trees-3294681_1920.jpg);
+    background-image: url(img/trees-3294681_1920.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
